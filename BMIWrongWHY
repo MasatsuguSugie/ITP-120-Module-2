@@ -1,4 +1,4 @@
-package itp120mod2ANSWERS18_19;
+package itp120mod2;
 
 import java.util.Scanner;
 import java.text.NumberFormat;
