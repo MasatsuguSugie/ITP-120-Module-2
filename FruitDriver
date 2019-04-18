@@ -1,0 +1,56 @@
+package itp120mod2;
+
+import java.text.NumberFormat;
+
+public class FruitDriver 
+{
+
+	public static void main(String[] args) {
+		
+		NumberFormat money = NumberFormat.getCurrencyInstance();
+	
+		// the constructor for banana
+		Fruit b = new Fruit ("banana",94,0.20,0.50);
+		
+		// use constructor for apple
+		Fruit a = new Fruit ("apple",52,0.10,0.45);
+		
+		// use constructor for orange
+		Fruit or = new Fruit("orange",86,0.20,0.55);
+			
+
+		// print toString
+		System.out.println (b.toString());
+		System.out.println("\tThe cost per kg is " + money.format(b.costPerKg()) + 
+				" and the calories per kg is " + b.calPerKg());
+		System.out.println (a.toString());
+		System.out.println("\tThe cost per kg is " + money.format(a.costPerKg()) + 
+				" and the calories per kg is " + a.calPerKg());
+		System.out.println (or.toString());
+		System.out.println("\tThe cost per kg is " + money.format(or.costPerKg()) + 
+				" and the calories per kg is " + or.calPerKg());
+		
+		//display fruit with lowest cost per kg
+		
+		double orCost = or.costPerKg();
+		double appCost = a.costPerKg();
+		double banCost = b.costPerKg();
+		
+		if(banCost<appCost && banCost<orCost)
+			System.out.println("\nThe banana has the lowest cost per kg");
+		else if (appCost<banCost && appCost<orCost)
+			System.out.println("\nThe apple has the lowest cost per kg");
+		else if (orCost < appCost && orCost < banCost)
+			System.out.println("\nThe orange has the lowest cost per kg");
+		else if(banCost<appCost && banCost==orCost)
+			System.out.println("Both the banana and orange have identical low costs per kg");
+		else if(banCost<orCost && banCost==appCost)
+			System.out.println("Both the banana and apple have identical low costs per kg");
+		else if(appCost<banCost && appCost==orCost)
+			System.out.println("Both the apple and orange have identical low costs per kg");
+		else if (banCost==appCost && banCost == orCost) 
+			System.out.println("All three fruit cost the same!");
+			
+	}
+
+}
