@@ -1,0 +1,76 @@
+package itp120mod2ANSWERS18_19;
+
+import java.text.NumberFormat;
+
+public class Fruit {
+	
+	private String type;
+	private int numCalories;
+	private double kgWeight;
+	private double cost;
+	
+	
+	// The no argument constructor (creates the object but the fields do not yet have values assigned to them
+	public Fruit () {
+		
+	}
+
+	public Fruit (String t, int n, double w, double c) {
+		type = t;
+		numCalories = n;
+		kgWeight = w;
+		cost = c;
+	}
+	
+	public String toString() {
+		NumberFormat nf = NumberFormat.getCurrencyInstance();
+		return "A typical " + type + " weighs " + kgWeight + " kilograms, has " + numCalories + " calories and costs " 
+				+ nf.format(cost) + " each";
+	}
+	
+	
+	//Create method for cost per kg;
+	public double costPerKg() {
+		return cost / kgWeight;	
+	}
+	
+	//Create method for calories per kg;
+	public double calPerKg() {
+		return numCalories / kgWeight;
+	}
+	
+	public String getType() {
+		return type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+	}
+	
+	public int getNumCalories() {
+		return numCalories;
+	}
+
+	public void setNumCalories(int numCalories) {
+		this.numCalories = numCalories;
+	}
+		
+	public double getKgWeight() {
+		return kgWeight;	
+	}
+	
+	public void setKgWeight (double kgWeight) {
+		this.kgWeight = kgWeight;
+	}
+	
+	public double getCost() {
+		return cost;
+	}
+	
+	public void setCost(double cost) {
+		this.cost = cost;
+	}
+	
+	
+	
+}
