@@ -1,0 +1,52 @@
+package itp120mod2ANSWERS18_19;
+
+import java.util.Scanner;
+
+public class BMI {
+
+	public static void main(String[] args) {
+		
+		// create a scanner object
+		Scanner scan = new Scanner(System.in);
+		
+		// initialize instance variables
+		double weight;
+		double height;
+		double BMI;
+		
+		// display welcome
+		System.out.println("Welcome to the body mass index (BMI) calculator.\n");
+		
+		// prompt user for inputs
+		System.out.print("Enter your weight in pounds: ");
+		weight = scan.nextDouble();
+		System.out.print("Enter your height in inches: ");
+		height = scan.nextDouble();
+		
+		// calculate and display BMI
+		BMI = ((weight * 703) / (height * height));
+		System.out.printf("%nYour BMI is %.1f%n", BMI);
+		
+		// display de-motivational statement based on superficial medical analysis
+		if (BMI >= 30) {
+			System.out.println("You are obese, according to 19th century medicine.");
+		}
+		else if (BMI >= 25) {
+			System.out.println("You are overweight, and you may also be Tom Cruise.");
+		}
+		else if (BMI >= 18.5) {
+			System.out.println("You are normal.");
+		}
+		else {
+			System.out.println("You are underweight.");
+		}		
+		
+		// provide smart-looking table to exploit user's medical ignorance, inflate own credibility
+		System.out.println("\nBMI Table:\n");
+		System.out.println("\tRANGE \t\tBMI \t\tEXAMPLE");
+		System.out.println("\tUnderweight: \tless than 18.5 \tJack Skellington");
+		System.out.println("\tNormal: \t18.5 to 24.9 \tLegolas");
+		System.out.println("\tOverweight: \t25 to 29.9 \tMost Americans");
+		System.out.println("\tObese: \t\t30 or greater \tMost Americans after breakfast");
+	}
+}
