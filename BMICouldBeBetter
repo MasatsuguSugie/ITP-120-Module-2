@@ -1,0 +1,44 @@
+package itp120mod2ANSWERS18_19;
+
+import java.util.Scanner;
+
+public class BMICouldBeBetter {
+
+	public static void main(String[] args) {
+		System.out.println("Welcome to the Body Mass Index (BMI) Calculator");
+
+		Scanner scan = new Scanner (System.in);
+
+		System.out.println("Enter your weight in pounds:");
+		int weight = scan.nextInt();
+
+		System.out.println("Enter your height in inches:");
+		int height = scan.nextInt();
+
+		double BMI = Math.ceil( (double)weight/(height * height)*703);
+
+		if (BMI <= 18.5) {
+			System.out.println("Your BMI is:" + BMI);
+			System.out.println("You are underweight!\n\n  Accepted ranges\nBMI VALUES\nUnderweight: less than 18.5\n"
+					+ "Normal:  not underweight but less than 24.9\nOverweight:  between 25 and 29.9\nObese: 30 or greater");
+		}
+		else if (BMI > 18.5 && BMI < 24.9) {
+			System.out.println("Your BMI is:" + BMI);
+			System.out.println("You are just right!\n\n  Accepted ranges\nBMI VALUES\nUnderweight: less than 18.5\n"
+					+ "Normal:  not underweight but less than 24.9\nOverweight:  between 25 and 29.9\nObese: 30 or greater");
+		}
+
+		else if (BMI >=24.9 && BMI <=29.9) {
+			System.out.println("Your BMI is:" + BMI);
+			System.out.println("You are over weight!\n\n  Accepted ranges\nBMI VALUES\nUnderweight: less than 18.5\n"
+					+ "Normal:  not underweight but less than 24.9\nOverweight:  between 25 and 29.9\nObese: 30 or greater");	
+		}
+
+		else if (BMI>=30) {
+			System.out.println("Your BMI is:" + BMI);
+			System.out.println("You are obesed!\n\n  Accepted ranges\nBMI VALUES\nUnderweight: less than 18.5\n"
+					+ "Normal:  not underweight but less than 24.9\nOverweight:  between 25 and 29.9\nObese: 30 or greater");	
+		}
+
+	}
+}
